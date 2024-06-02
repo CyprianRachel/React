@@ -1,27 +1,36 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 
-const element = React.createElement(
-  "a",
-
-  { href: "https://zrozumiecreact.pl" },
-  "Test"
+const stringContent = "Test 1!";
+const numberContent = 13;
+const calcContent = 10 + 5;
+function getRandomNumber() {
+  console.log(Math.round(Math.random() * 100));
+}
+const person = {
+  name: "Filip",
+  age: 29,
+};
+const paragraphElement = (
+  <>
+    <h2>Heading</h2>
+    <a href="http://zrozumiecReact.pl" className="link" for="">
+      Strona kursu
+    </a>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam,
+      corporis nam voluptate libero quas. Placeat ipsum unde quidem voluptatem.
+    </p>
+  </>
 );
-const elementInJSX = <a href="https://zrozumiecreact.pl">Test 3</a>;
-console.log(<h1>Test 2</h1>); // -> React.createElement('h1', {}, 'Test 2')
-console.log(element);
-
-const currentDate = new Date();
-
-const hours = currentDate.getHours();
-const minutes = currentDate.getMinutes();
-
-console.log(hours, minutes);
-
-const timer = (
+const element = (
   <div>
-    {hours}:{minutes}
+    {paragraphElement}
+    {paragraphElement}
+    {paragraphElement}
+    {paragraphElement}
+    {paragraphElement}
+    {paragraphElement}
   </div>
 );
 
-ReactDOM.createRoot(document.getElementById("root")).render(timer);
+ReactDOM.createRoot(document.getElementById("root")).render(element);
